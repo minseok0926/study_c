@@ -58,3 +58,24 @@ int main() {
   
   return 0;
 }
+
+
+#include <stdio.h>
+#include <string.h>
+int main() {
+  char a[100];
+  scanf("%s", a);
+  char b;
+  b = strlen(a);
+  for(int i=0; i < b; i++){
+    if (a[i] < 91){
+      a[i] += 32;
+    }
+    else if (96 < a[i] &&  a[i] < 122){
+      a[i] -= 32;
+    }
+    printf("%c", a[i]);
+  }
+  
+  return 0;
+}
