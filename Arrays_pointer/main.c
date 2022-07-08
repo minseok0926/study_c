@@ -79,3 +79,34 @@ int main() {
   
   return 0;
 }
+
+
+
+#include <stdio.h>
+#include <string.h>
+int main() 
+{
+  char *sp = "Hello string";
+  char *name = "씨큐브코딩";
+  printf("%d %d \n", sp, "Hello string");
+  printf("%d %d \n", sp, "씨큐브 코딩");
+  printf("%s %s \n", sp, "Hello string");
+  printf("%s %s \n", sp, "씨큐브 코딩");
+  return 0;
+  }
+
+
+
+#include <stdio.h>
+#include <string.h>
+int main() 
+{
+  char str[] = "Hello string";
+  char name[20] = "씨큐브코딩";
+  char *p, *q;
+  p = str;
+  q = name;
+  printf("%d %d\n", p, name);
+  printf("%s %s\n", str, name);
+  return 0;
+  }
