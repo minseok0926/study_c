@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+int main() 
+{
+  int a;
+  int b;
+  int c;
+  int m;
+  scanf("%d", &a);
+  scanf("%d", &b);
+  scanf("%d", &c);
+  if (b >= c){
+    printf("-1");
+  }
+  else{
+    printf("%d", a / (c-b) + 1);
+  }
+  return 0;
+  }
+  
+  
