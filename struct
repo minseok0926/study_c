@@ -18,4 +18,84 @@ int main()
   return 0;
   }
   
+  #include <stdio.h>
+#include <string.h>
+struct Circle {
+  int x;
+  int y;
+  double r;
+  double s;
+  double o;
+};
+int main() {
+  struct Circle c;
+  scanf("%d", &c.x);
+  scanf("%d", &c.y);
+  scanf("%lf", &c.r);
+  c.s = c.r * c.r * 3.14;
+  c.o = c.r *2 * 3.14;
+  printf("원의 넓이: %3.lf\n", c.s);
+  printf("원의 넓이: %3.lf", c.o);
   
+
+      return 0;
+}
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+struct Coordi {
+  int x;
+  int y;
+};
+struct Circle {
+  struct Coordi cen;
+  double r;
+};
+int main() {
+  struct Circle c1;
+  struct Coordi c4;
+  struct Circle c2 = {{4, 5}, 12.4};
+  scanf("%d", &c4.x);
+  scanf("%d", &c4.y);
+  scanf("%lf", &c1.r);
+  printf("%d  ", c4.x);
+  printf("%d  ", c4.y);
+  printf("%lf\n", c1.r);
+  int a;
+  int b;
+  double c;
+  scanf("%d", &a);
+  scanf("%d", &b);
+  scanf("%lf", &c);
+  struct Circle c3 = {{a, b}, c};
+  printf("%d  ", c2.cen.x);
+  printf("%d  ", c2.cen.y);
+  printf("%lf  \n", c2.r);
+  printf("%d  ", c3.cen.x);
+  printf("%d  ", c3.cen.y);
+  printf("%lf  ", c3.r);
+      return 0;
+}
+
+#include <stdio.h>
+#include <string.h>
+struct Person {
+char name[10];
+int age;
+double height;
+};
+int main() {
+  struct Person list [5] = {{"김유신", 15, 178.3}, {"김춘추", 13, 173.3}, {"사다함", 17, 183.2}, {"원효", 19, 168.9}, {"장보고", 13, 187.3}};
+  int a;
+  for (int i = 0; i < 5; i++){
+    printf("%s  %d   %lf\n", list[i].name, list[i].age, list[i].height);
+  }
+  
+  return 0;
+}
