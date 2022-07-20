@@ -1,0 +1,204 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+  FILE *fp = fopen("datafile.txt", "w");
+
+  if (fp == NULL)
+  {
+    printf("파일이 없습니다.");
+    exit(1);
+    
+  }
+  fclose(fp);
+  return 0;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+  FILE *fp = fopen("CharOut.txt", "w");
+
+  if (fp == NULL)
+  {
+    printf("파일이 없습니다.\n");
+    exit(1);
+    
+  }
+  fputc('A', fp);
+  fputc('B', fp);
+  fputc('\n', fp);
+  fputc(97 , fp);
+  fputc(98, fp);
+  fclose(fp);
+  return 0;
+}
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+void CharFileOutput(){
+  char c; scanf("%c", &c);
+  FILE * fp2 = fopen("CharOut.txt", "w");
+  if (fp2 == NULL){
+    puts("파일 없음.");
+    exit(1);
+  }
+  fputc(c, fp2);
+  fclose(fp2);
+  
+}
+int main() {
+  FILE *fp = fopen("CharOut.txt", "w");
+
+  if (fp == NULL)
+  {
+    printf("파일이 없습니다.\n");
+    exit(1);
+  }
+  fclose(fp);
+  return 0;
+}
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+  FILE *fp = fopen("CharOut.txt", "r");
+  char ch;
+  if (fp == NULL)
+  {
+    printf("파일이 없습니다.\n");
+    exit(1);
+  }
+  ch = fgetc(fp);
+  printf("%c", ch);
+  ch = fgetc(fp);
+  putchar(ch);
+  fclose(fp);
+  return 0;
+}
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+void  charFileInput (){
+  FILE *fp = fopen("CharOut.txt", "r");
+  char ch;
+  if (fp == NULL)
+  {
+    printf("파일이 없습니다.\n");
+    exit(1);
+  }
+  ch = fgetc(fp);
+  printf("%c", ch);
+  ch = fgetc(fp);
+  putchar(ch);
+  fclose(fp);
+}
+int main() {
+  charFileInput();
+  return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+void  charFileInput (){
+  FILE *fp = fopen("CharOut.txt", "r");
+  char ch;
+  if (fp == NULL)
+  {
+    printf("파일이 없습니다.\n");
+    exit(1);
+  }
+  ch = fgetc(fp);
+  printf("%c", ch);
+  ch = fgetc(fp);
+  putchar(ch);
+  fclose(fp);
+}
+int main() {
+  FILE *fp2 = fopen("CharFile.txt", "w");
+  if (fp2 == NULL)
+  {
+    printf("파일이 없습니다.\n");
+    exit(1);
+  }
+  fputc('H', fp2);
+  fputc('O', fp2);
+  fclose(fp2);
+  charFileInput();
+  return 0;
+}
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+  FILE *out = fopen("StringFile.txt", "w");
+  char str1[] = "Hell C3Coding";
+  char str2[] = "안녕하세요. 씨큐브코딩입니다.\n";
+  
+  if (out == NULL)
+  {
+    printf("파일이 없습니다.\n");
+    exit(1);
+  }
+  fputs("문자열을 출력합니다\n", out);
+  fputs(str1, out);
+  fputs("\n", out);
+  fputs(str2, out);
+  
+  
+  fclose(out);
+  return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+void StringFileOutput(){
+    FILE *out2 = fopen("StringFile.txt", "w");
+  char str[100];
+  scanf("%s", str);
+  
+  if (out2 == NULL)
+  {
+    printf("파일이 없습니다.\n");
+    exit(1);
+  }
+  fputs(str, out2);
+}
+
+
+
+
+int main() {
+  FILE *out = fopen("StringFile.txt", "w");
+  char str1[] = "Hell C3Coding";
+  char str2[] = "안녕하세요. 씨큐브코딩입니다.\n";
+  
+  if (out == NULL)
+  {
+    printf("파일이 없습니다.\n");
+    exit(1);
+  }
+  fputs("문자열을 출력합니다\n", out);
+  fputs(str1, out);
+  fputs("\n", out);
+  fputs(str2, out);
+  
+
+  
+  fclose(out);
+  
+  StringFileOutput();
+  return 0;
+}
