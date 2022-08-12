@@ -67,3 +67,48 @@ int main() {
 
 
 
+#include <stdio.h>
+#include <conio.h>
+
+int main() {
+  int a;
+  char b;
+  scanf("%d", &a);
+  scanf("%d", &b);
+  printf("%d%d", a, b);
+
+
+  return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+  float a;
+  char b;
+  scanf("%f", &a);
+  scanf("%c", &b);
+  printf("%f    %d", a, b);
+    
+
+
+  return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+  char str[80];
+  char b;
+  fgets(str, 80, stdin);
+  scanf("%c", &b);
+  printf("%s\n", str);
+  printf("%d\n", b);
+  return 0;
+}
+
+
+
+
