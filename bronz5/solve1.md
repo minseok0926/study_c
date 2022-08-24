@@ -21,3 +21,20 @@ int main() {
   return 0;
 }
 ```
+
+[백준 문제 4999](https://www.acmicpc.net/problem/4999)
+```c
+#include <stdio.h>
+#include <string.h>
+int main() {
+  int a;
+  char c[1001] = {};
+  char c1[1001] = {};
+  scanf("%s", c);
+  scanf("%s", c1);
+
+  if(strlen(c)>=strlen(c1)) puts("go");
+  else if(strlen(c)<=strlen(c1)) puts("no");
+  return 0;
+}
+```
