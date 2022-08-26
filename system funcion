@@ -122,3 +122,58 @@ int main() {
 
 
 
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+  float *f;
+  char *c;
+  
+  f = (float*)malloc(1);
+  c = (char*)malloc(8);
+
+  *f = 3.141592;
+  *c = 'A';
+  
+  printf("%f\n", *f);
+  printf("%c", *c);
+  
+  return 0;
+}
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+  int a;
+  int random = 0;
+  scanf("%d", &a);
+  
+  for(int i = 0; i <= a; i++){
+    random = rand()%99;
+    printf("%d  ", random);
+    
+    
+    }
+    return 0;
+}
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+  float a;
+  int b;
+  scanf("%d", &b);
+  for(int i = 1; i <= b; i++){
+    scanf("%f", &a);
+    printf("%f\n", a);
+    }
+    return 0;
+}
+
+
+
