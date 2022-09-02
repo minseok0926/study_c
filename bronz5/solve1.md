@@ -38,3 +38,26 @@ int main() {
   return 0;
 }
 ```
+
+
+
+#include<stdio.h>
+int main()
+{
+	int a; 
+	scanf("%d", &a); 
+	for (int i = 0; i < a; i++) 
+	{
+		int c, b;
+		scanf("%d %d", &c, &b); 
+		int d = c;
+		for (int j = 1; j < b; j++) 
+		{
+			d = d * c %10;
+		}
+		if (d % 10== 0)  
+			printf("%d\n", 10);
+		else 
+			printf("%d\n", d % 10);
+	}
+}
