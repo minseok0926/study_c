@@ -110,3 +110,30 @@ int main(){
   printf("%d", g %10);
 }
 
+
+숙제
+
+
+#include <stdio.h>
+int main(){
+  int a;
+  int b;
+  int c;
+  int t;
+
+  scanf("%d %d", &a, &b);
+  scanf("%d", &c);
+  
+  b = b+c;
+  if (b >= 60){
+    a = a + b/60;
+    b %= 60;
+  }
+  if (a >= 24){
+    a = 0;
+  }
+  printf("%d %d", a, b);
+}
+
+
+
