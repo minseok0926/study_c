@@ -127,10 +127,10 @@ int main(){
   b = b+c;
   if (b >= 60){
     a = a + b/60;
-    b %= 60;
+    b = b % 60;
   }
   if (a >= 24){
-    a = 0;
+    a = a%24;
   }
   printf("%d %d", a, b);
 }
