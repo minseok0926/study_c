@@ -1,0 +1,109 @@
+#include <stdio.h>
+int main(){
+  int a;
+  int i;
+  int b;
+  int c=0;
+  scanf("%d", &a);
+  for(i = 0; i < a; i++){
+    scanf("%d", &b);
+    c += b;
+  }
+  c = c/a;
+  if(c >= 80){
+    printf("easy\n");
+  }
+  else if(c >= 60){
+    printf("normal\n");
+  }
+  else{
+    printf("hard\n");
+  }
+}
+
+
+#include <stdio.h>
+int main(){
+  int a;
+  int t = 0;
+  scanf("%d", &a);
+  int ai[1000000];
+  int bi[1000000];
+  for (int i = 0; i < a; i++){
+    scanf("%d", &ai[i]);
+  }
+  for (int i = 0; i < a; i++){
+    scanf("%d", &bi[i]);
+  }
+  
+  for (int i = 0; i < a; i++){
+    if (ai[i] == bi[i]){
+      t += 1;
+    }
+  }
+  printf("%d", t);
+}
+
+
+
+
+#include <stdio.h>
+int main(){
+  int a;
+  int b = 0;
+  int i;
+  scanf("%d", &a);
+
+  while(a>=10){
+    while(a>0){
+      b += a % 10;
+      a /= 10;
+    }
+    a=b;
+    b=0;
+    i++;
+  }
+  printf("%d", i);
+}
+
+
+#include <stdio.h>
+int main(){
+  int n, m, i, j, count = 0;
+  scanf("%d %d", &n, &m);
+  for (i = n; i <= m; i++)
+  {
+    for(j = 2; j*j<=i; j++){
+      if(i%j==0) break;
+    }
+    if(j*j>i) count++;
+  }
+  printf("%d", count);
+}
+
+
+#include <stdio.h>
+int main(){
+  int a[10];
+  int b[10];
+  int i;
+  int c = 0;
+  int d = 0;
+  for (int i = 0; i < 10; i++){
+    scanf("%d", &a[i]);
+  }
+  for (int i = 0; i < 10; i++){
+    scanf("%d", &b[i]);
+  }
+  for (int i = 0; i < 10; i++){
+    if (a[i] > b[i]) c++;
+    else if (a[i] < b[i]) d++;
+  }
+  if (c > d) printf("A");
+  else if (c < d) printf("B");
+  else if (c == d) printf("D");
+}
+
+
+
+
