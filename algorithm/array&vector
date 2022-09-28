@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <vector>
+using namespace std;
+
+int main(){
+  vector<int> v;
+  int j;
+  int a;
+  for(j = 0; j < 10; j++){
+    scanf("%d", &a);
+    v.push_back(a);  
+  }
+  for(j = 9; j >= 0; j--){
+     printf("%d  ", v[j]); 
+  }  
+  return 0;
+}
+
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+
+int main() {
+  int n, a[100000];
+  scanf("%d", &n);
+  for (int i = 0; i < n; i++) {
+    scanf("%d", &a[i]);
+  }
+  int mx_score = 0, mn_score = 100, sum = 0;
+  for (int i = 0; i < n; i++) {
+    if (mx_score < a[i]) {
+      mx_score = a[i];
+    }
+    if (mn_score > a[i]) {
+      mn_score = a[i];
+    }
+    sum += a[i];
+  }
+  printf("%d", (sum - mn_score - mx_score) / (n - 2));
+  return 0;
+}
+
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+
+int main() {  
+  int n, a[100000];
+  int max_height = 0;
+  int max_i;
+  scanf("%d", &n);
+  for (int i = 0; i < n; i++){
+    scanf("%d", &a[i]);
+  }
+  for (int i = 0; i < n; i++){
+    if (a[i] < a[i+1]){
+      if (max_height < a[i+1] - a[i]){
+        max_height = a[i+1] - a[i];
+        max_i = i;
+      }
+    }
+  }
+  if (max_height == 0){
+    printf("0");
+  }
+  else
+    printf("%d %d", max_i+1, max_i+2);
+  return 0;
+}
+
+
+
