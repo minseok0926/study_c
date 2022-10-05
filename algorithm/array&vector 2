@@ -1,0 +1,109 @@
+#include <stdio.h>
+#include <vector>
+using namespace std;
+int main(){
+  int x, y;
+  int S[100][100];
+  int n, m;
+  scanf("%d %d", &n, &m);
+  for (int i = 0; i < m; i++){
+    for(int j = 0; j < n; j++){
+      scanf("%d", &S[i][j]);
+      if (S[i][j] == 2){
+        x = j;
+        y = i;
+      }
+    }
+  }
+  while (!(S[x][y+1] && S[x+1][y])){
+    if (!S[x+1][y]) x++;
+    else if (!S[x][y+1]) y++;
+  }
+  printf("%d %d", x, y);
+  
+  return 0;
+}
+
+
+
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+int main(){
+  int car[101][101] = {0, };
+  int n, m;
+  scanf("%d %d", &n, &m);
+  for (int i = 0; i < m; i++){
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+    if (car[a][b] == 0 || car[a][b] < c){
+      car[a][b] = c;
+    }
+  }
+  for (int i = 1; i <= n; i++){
+    for (int j = 1; j <= n; j++){
+      printf("%d", car[i][j]);
+  }
+    printf("\n");
+  }
+  return 0;
+}
+
+
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+int main(){
+  vector<int> v[10001];
+  int n, m;
+  scanf("%d %d", &n, &m);
+  for (int i = 0; i < m; i ++){
+    int a, b;
+    scanf("%d %d", &a, &b);
+    v[a].push_back(b);
+  }
+  for (int i = 1; i <= n; i++){
+    for (int j = 0; j < v[i].size(); j++){
+      printf("%d ", v[i][j]);
+    }
+    if (v[i].size() == 0) printf("0");
+    printf("\n");
+  }
+
+  return 0;
+}
+
+
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+int main(){
+  int P[101][101] = {0, };
+  int n;
+  scanf("%d", &n);
+  for (int i = 0; i < n; i++){
+    int x, y;
+    scanf("%d %d", &x, &y);
+    for (int j = y; j < y+10; j++){
+      for (int k = x; k < x+10; k++){
+        P[j][k] = 1;
+      }
+    }
+    }
+  int answer = 0;
+  for (int i = 0; i < 101; i++){
+      for (int j = 0; j < 101; j++){
+        answer += P[i][j];
+      }
+    }
+  printf("%d", answer);
+  
+  return 0;
+}
+
+
+숙제
+
