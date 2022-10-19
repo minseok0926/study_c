@@ -1,0 +1,114 @@
+#include <stdio.h>
+#include <vector>
+using namespace std;
+int tp[10001];
+
+int solve_1(int N){
+  N = (N-2) * (N+1) * N/2;
+  return N;
+}
+int solve_2(int N){
+  N = (N * N * N) - ((N-1) * (N - 1) * (N - 1));
+  return N;
+}
+int solve_3(int N){
+  N = (3 * N * N * N) - (N*N) - (3*N);
+  return N;
+}
+
+int main(){
+  int n,m;
+  scanf("%d %d", &n, &m);
+  if (m == 1){
+    printf("%d", solve_1(n));
+  }
+  else if (m == 2){
+    printf("%d", solve_2(n));
+  }
+  else if (m == 3){
+    printf("%d", solve_3(n));
+  }
+  return 0;
+}
+
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+int count = 0;
+int total(int N){
+  if (N == 1){
+    return N;
+  } 
+  if (N % 2 == 0){
+    count++;
+    return total(N / 2);
+  }
+  else {
+    count++;
+    return total(N * 3 +1);
+  }
+}
+
+
+int main(){
+  int n;
+  scanf("%d", &n);
+  total(n);
+  printf("%d", count);
+  return 0;
+}
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+void hanoi(int N, int start, int end){
+  if (N == 0){
+    return;
+  }
+  hanoi(N-1, start, 6 - start-end);
+  printf("%d %d\n", start, end);
+  hanoi(N-1, 6-start-end, end);
+  }
+
+int main(){
+  int n;
+  scanf("%d", &n);
+  hanoi(n, 1, 3);
+  
+  return 0;
+}
+
+
+
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+int n;
+int pi[11];
+int p;
+void best(int index, int total){
+  if (index  == n){
+    if(p < total) p = total;
+    return;
+    }
+  int p_first = pi[index];
+  int p_speed = pi[index] * pi[index] - 40 * pi[index] + 300;
+  best(index + 1, total + p_first);
+  best(index + 1, total + p_speed);
+  }
+
+
+int main(){
+  scanf("%d", &n);
+  for (int i = 0; i < n; i++){
+    scanf("%d", &pi[i]);
+  }
+  best(0, 0);
+  printf("%d", p);
+  return 0;
+}
+
+
+
