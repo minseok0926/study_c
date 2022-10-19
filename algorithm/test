@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <vector>
+using namespace std;
+
+const int dx[8] = {0, 1, 1, 1, 0, -1, -1, -1};
+const int dy[8] = {1, 1, 0, -1, -1, -1, 0, 1};
+int main(){
+  int N, M;
+  int count;
+  int S[102][102] = {0, };
+  scanf("%d %d", &N, &M);
+  int c;
+  scanf("%d", &c);
+  int x = 0, y = 0;
+  
+  for (int i = 0; i < c; i++){
+    scanf("%d %d", &x, &y);
+    S[x][y] = -1;
+  }
+  for (int x = 0; x < N; x++){
+      for (int y = 0; y < M; y++){
+        for (int k = 0; k < 8; k++){
+          int nx = x + dx[k];
+          int ny = y + dy[k];
+          
+          if (S[nx][ny] == -1 && S[x][y] != -1){
+            S[x][y]++;
+          }
+          
+        }
+        
+      }
+    }
+  for (int x = 1; x < M+1; ++x){
+    for (int y = 1; y < N+1; ++y){
+      printf("%d ", S[x][y]);
+    }
+    printf("\n");
+  }
+  
