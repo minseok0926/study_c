@@ -110,5 +110,60 @@ int main(){
   return 0;
 }
 
+숙제
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+
+int pascal(int high, int left){
+  if (high == 1 || left == 1 || left == high){
+    return 1;
+  }
+  return pascal(high -1, left) + pascal(high - 1, left - 1);
+}
 
 
+int main(){
+  int n, m;
+  scanf("%d %d", &n, &m);
+  printf("%d", pascal(n, m));
+  return 0;
+}
+
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+int p = 123456789;
+int S[10], B[10];
+int n;
+
+void balance(int m, int s, int b, int count){
+  if (m == n){
+    int d;
+    if (s > b){
+      d = s-b;
+    }
+    else{
+      d = b-s;
+      }
+    if (d < p && count != n){
+      p = d;
+    }
+    return ;
+  }
+  balance(m+1, s*S[m], b + B[m], count);
+  balance(m + 1, s, b, count + 1);
+  }
+
+
+int main(){
+  scanf("%d", &n);
+  for (int i  = 0; i < n; i++){
+    scanf("%d %d", &S[i], &B[i]);
+  }
+  balance (0, 1, 0, 0);
+  printf("%d", p);
+  return 0;
+}
