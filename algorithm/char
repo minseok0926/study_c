@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <vector>
+using namespace std;
+int main(){
+  char sentence[1000];
+  scanf("%[^\n]", sentence);
+  for (int i = 0; sentence[i] != NULL; i++){
+    if (sentence[i] <= 90 && sentence[i] >= 65){
+      sentence[i] += 32;
+    }
+  }
+  
+  printf("%s", sentence);
+  
+  return 0;
+}
+
+
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+int main(){
+  char ward[1000];
+  int abc[26] = {0, };
+  scanf("%s", ward);
+  for (int i = 0; ward[i]; i++){
+    if (ward[i] <= 90 && ward[i] >= 65){
+      ward[i] = ward[i] -'A'+'a';
+    }
+    abc[ward[i] - 'a']++;
+  }
+  for (int i = 0; i < 26; i++){
+    printf("%d", abc[i]);
+  }
+  return 0;
+}
+
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+int main(){
+  char code[1000];
+  int n;
+  scanf("%d", &n);
+  scanf("%s", code);
+  for (int i = 0; code[i]; i++){
+    code[i] = code[i] + n;
+    if (code[i] >'Z'){
+      code[i] = code[i]-26;
+    }
+    printf("%c", code[i]);
+  }
+  return 0;
+}
+
+
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+int main(){
+  char S[1000];
+  int count[26];
+  scanf("%s", S);
+  for (int i = 0; i < 26; i++){
+    count[i] = -1;
+  }
+  for (int i =0; S[i]; i++){
+    if (count[S[i]-'a'] == -1){
+      count[S[i]-'a'] = i;
+    }
+  }
+  for (int i = 0; i < 26; i++){
+    printf("%d ", count[i]);
+  }
+  return 0;
+}
+
+
+
+
+
