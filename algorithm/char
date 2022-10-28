@@ -77,8 +77,123 @@ int main(){
   }
   return 0;
 }
+숙제
 
 
 
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+int main(){
+  char sentence[100000];
+  char pass_word[100001] = {0,};
+  int d, l, count = 0;
+  scanf("%d %d", &l, &d);
+  scanf("%s", sentence);
+  for (int i = 0; sentence[i]; i++){
+    if (pass_word[count]){
+      count++;
+    }
+    pass_word[count] = sentence[i];
+    count += d;
+    if (count >= l){
+      count = count-l;
+    }
+  }
+  printf("%s", pass_word);
+  
+  return 0;
+}
+
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+int main(){
+  int n;
+  char a[10000], b[10000];
+  scanf("%d", &n);
+  scanf("%s %s", a, b);
+  for (int i = 0; a[i]; i++){
+    int check = 0;
+    for (int j = 0; b[j]; j++){
+      if (a[(i+j)%n] != b[j]){
+        check = 1;
+      }
+    }
+    if (!check){
+      printf("Yes");
+      return 0;
+    }
+  }
+  printf("No");
+  return 0;
+}
+
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+int main(){
+  char ward1[11], ward2[11];
+  int num1 = 0, num2=0;
+  scanf("%s, %s", ward1, ward2);
+  for (int i = 0; ward1[i]; i++){
+    if (ward1[i] == '6'){
+      ward1[i] = '5';
+    }
+    num1 = num1 * 10 + ward1[i] - '0';
+  }
+  for (int i = 0; ward2[i]; i++){
+    if (ward2[i] == '6'){
+      ward2[i] = '5';
+    }
+    num2 = num2 * 10 + ward2[i] - '0';
+  }
+  printf("%d ", num1+num2);
+  num1 = 0, num2 = 0;
+  for (int i = 0; ward1[i]; i++){
+    if (ward1[i] == '5'){
+      ward1[i] = '6';
+    }
+    num1 = num1 *10 + ward1[i] -'0';
+  }
+  for (int i = 0; ward2[i]; i++){
+    if (ward2[i] == '5'){
+      ward2[i] = '6';
+    }
+    num2 = num2 *10 + ward2[i] -'0';
+    }
+  printf("%d ", num1+num2);
+  return 0;
+}
+
+
+
+
+#include <stdio.h>
+#include <vector>
+using namespace std;
+int main(){
+  char S[1000];
+  char art[9] = "finearts";
+  scanf("%s", S);
+  for (int i = 0; S[i]; i++){
+    if ('A' <= S[i] && S[i] <= 'Z'){
+      S[i] = S[i] - 'A' + 'a';
+    }
+    int check = 0;
+    for (int j = 0; art[j]; j++){
+      if (S[i] == art[j]){
+        check = 1;
+      }
+    }
+    if(!check){
+      printf("%c", S[i]);
+    }
+  }
+  return 0;
+}
 
 
