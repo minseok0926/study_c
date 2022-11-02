@@ -1,0 +1,99 @@
+#include <cstdio>
+#include <cstring>
+using namespace std;
+int main(){
+  char sound[101] = {0, }, R[101] = {0, };
+  int n;
+  bool flag=false;
+  scanf("%s", sound);
+  scanf("%d", &n);
+  for (int i = 0; i < n; i++){
+    scanf("%s", R);
+    if (strcmp(sound, R) == 0){
+      flag=true;
+    }
+  }
+  if(flag==true)
+    printf("Yes");
+  else 
+    printf("No");
+
+
+  return 0;
+}
+
+#include <cstdio>
+#include <cstring>
+char ward [100001];
+int palindrom(int a, int b){
+  if (a > b)
+    return 0;
+  else if (ward[a] == ward[b])
+    return  palindrom(a + 1, b - 1);
+  else return 1;
+}
+int main(){
+  int n;
+  scanf("%d", &n);
+  int count = 0;
+  for (int i = 0; i < n; i++){
+    scanf("%s", ward);
+    count += palindrom(0, strlen(ward)-1);
+  }
+  printf("%d", count);
+  return 0;
+}
+
+
+
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+using namespace std;
+int main(){
+  string a, b;
+  cin >> a;
+  cin >> b;
+  if (a.size() > b.size()){
+    cout << a;
+  }
+  else if (a.size() < b.size()){
+    cout << b;
+  }
+  else{
+    if (a > b)
+      cout<<a;
+    else if (a < b)
+      cout<<b;
+  }
+  return 0;
+}
+
+
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+using namespace std;
+int main(){
+  string s;
+  cin >> s;
+  string bomb;
+  cin >> bomb;
+  int bomb_size = bomb.size();
+  int index = 0;
+  while(1){
+    index = s.find(bomb);
+    if (index < 0)
+      break;
+    s = s.substr(0, index) + s.substr(index + bomb_size, s.size()+(index + bomb_size));
+  }
+  if (s.size() == 0){
+    printf("Art!");
+  }
+  else 
+    cout << s;
+  return 0;
+}
+
