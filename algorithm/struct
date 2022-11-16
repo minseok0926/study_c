@@ -1,0 +1,114 @@
+#include <iostream>
+#include <cstdio>
+#include <string>
+using namespace std;
+
+struct people
+{
+  int id; 
+  string name;
+  int c;
+  int a;
+};
+
+int main(){
+  people student[1000000];
+  int n;
+  int m;
+  scanf("%d", &n);
+  for (int i = 0; i < n; i++){
+    int id, c, a;
+    char name[21];
+    scanf("%d %s %d %d", &id, name, &c, &a);
+    student[i].id = id;
+    student[i].name = name;
+    student[i].c = c;
+    student[i].a = a;
+  }
+
+  scanf("%d", &m);
+
+  for (int i = 0; i < m; i++){
+    string search;
+    cin >> search;
+    int check = 1;
+    for (int j = 0; j < n; j++){
+      if (student[j].name == search){
+        printf("%d %d %d\n", student[j].id, student[j].c, student[j].a);
+        check = 0;
+      }
+    }
+    if (check){
+      printf("-1\n");
+    }
+  }
+  
+  return 0;
+}
+
+
+#include <iostream>
+#include <cstdio>
+#include <string>
+#include <utility>
+using namespace std;
+int main(){
+  pair<int, int> p[10001];
+  int n;
+  scanf("%d", &n);
+  for (int i = 1; i <= n; i++){
+    int t, a;
+    scanf("%d %d", &t, &a);
+    p[i] = make_pair(t, a);
+  }
+  pair<int, int> no_1 = {-1, 1};
+  int ans = 0;
+  for (int i = 1; i <= n; i++){
+    if (p[i] > no_1){
+      no_1 = p[i];
+      ans = i;
+    }
+  }
+  printf("%d", ans);
+  return 0;
+}
+
+
+
+
+
+#include <iostream>
+#include <cstdio>
+#include <string>
+#include <utility>
+using namespace std;
+int main(){
+  pair<int, int> p[51][51];
+  int n, m;
+  scanf("%d %d", &n, &m);
+  for (int i = 1; i<= n; i++){
+    for (int j = 1; j <= m; j++){
+      int a, b;
+      scanf("%d %d", &a, &b);
+      p[i][j] = make_pair(a, b);
+    }
+  }
+  int a1, b1, a2, b2;
+  scanf("%d %d", &a1, &b1);
+  scanf("%d %d", &a2, &b2);
+  pair <int, int> temp = p[a1][b1];
+  p[a1][b1] = p[a2][b2];
+  p[a2][b2] = temp;
+  for (int i = 1; i<=n; i++){
+    for (int j = 1; j <= m; j++){
+      printf("%d %d ", p[i][j].first, p[i][j].second);
+    }
+    printf("\n");
+  }
+  return 0;
+}
+
+
+
+
+
